@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create jar">
+	<!--this file was created by Eclipse Runnable JAR Export Wizard -->
+	<!--ANT 1.7 is required -->
+	<macrodef name="packaging">
+		<attribute name="subdir" />
+		<attribute name="jarname" />
+		<sequential>
+			<!-- <mkdir dir="D:/SyncFiles - Copie/Git/AutoRunStarter_Project/build/AutoRunProject/@{subdir}/"/> -->
+			<jar destfile="@{subdir}/@{jarname}.jar">
+				<fileset dir="bin/" />
+			</jar>
+		</sequential>
+	</macrodef>
+
+	<delete includeemptydirs="true" failonerror="false">
+		<fileset dir="build/" includes="**/*" />
+	</delete>
+
+	<target name="create_run_jar">
+		<packaging subdir="build" jarname="Helpers" />
+	</target>
+</project>
